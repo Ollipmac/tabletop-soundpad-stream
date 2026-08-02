@@ -1,0 +1,52 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Derive version from tag
+        run: echo "VERSION=${GITHUB_REF_NAME#v}" >> "$GITHUB_ENV"
+
+      - name: Set version and download URL in module.json
+        run: |
+          DOWNLOAD="https://github.com/${GITHUB_REPOSITORY}/releases/download/${GITHUB_REF_NAME}/module.zip"
+          jq --arg v "$VERSION" --arg d "$DOWNLOAD" \
+            '.version = $v | .download = $d' module.json > module.tmp.json
+          mv module.tmp.json module.json
+          echo "----- module.json -----"
+          cat module.json
+
+      - name: Build module.zip
+        run: |
+          zip -r module.zip \
+            module.json \
+            scripts \
+            styles \
+            templates \
+            lang \
+            LICENSE \
+            README.md \
+            INSTALLATION_FR.md
+
+      - name: Publish release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release create "${GITHUB_REF_NAME}" module.zip module.json \
+            --title "${GITHUB_REF_NAME}" \
+            --notes "Automated release for ${GITHUB_REF_NAME}.
+
+          Install in Foundry VTT via **Install Module → Manifest URL**:
+          https://github.com/${GITHUB_REPOSITORY}/releases/latest/download/module.json" \
+          || gh release upload "${GITHUB_REF_NAME}" module.zip module.json --clobber

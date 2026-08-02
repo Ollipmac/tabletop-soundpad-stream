@@ -1,0 +1,78 @@
+{
+  "tabletop-soundpad-stream": {
+    "controls": {
+      "open": "Open Tabletop Audio SoundPad Stream"
+    },
+    "hub": {
+      "title": "Tabletop Audio — SoundPad Stream",
+      "heading": "SoundPad Stream",
+      "subtitle": "Stream audio from a Tabletop Audio tab directly to your players.",
+      "unofficial": "Unofficial community module. No Tabletop Audio content is included, copied, or stored.",
+      "choosePad": "Choose a SoundPad",
+      "choosePadHint": "The SoundPad opens on the official Tabletop Audio website.",
+      "openPad": "Open",
+      "capture": "Capture and stream audio",
+      "captureHint": "Audio travels directly between your browser and your players’ browsers.",
+      "captureInstruction": "In the sharing dialog, choose the Tabletop Audio tab and enable “Also share tab audio”.",
+      "start": "Start broadcast",
+      "stop": "Stop broadcast",
+      "players": "connected players",
+      "noPlayers": "No players in this world.",
+      "noStorage": "No audio stored on the server"
+    },
+    "receiver": {
+      "title": "SoundPad Listener",
+      "heading": "Tabletop Audio",
+      "waitingForGM": "Waiting for the GM to start broadcasting.",
+      "liveFrom": "Broadcast offered by {gm}.",
+      "theGM": "the GM",
+      "enable": "Enable listening",
+      "disable": "Disable listening",
+      "volume": "Tabletop Audio volume",
+      "clickRequired": "A click is required to allow audio playback in your browser."
+    },
+    "status": {
+      "idle": "Broadcast stopped",
+      "requesting": "Choose a tab to share…",
+      "broadcasting": "Live broadcast",
+      "stopping": "Stopping…",
+      "disabled": "Listening disabled",
+      "waiting": "Waiting",
+      "connecting": "Connecting…",
+      "connected": "Connected",
+      "disconnected": "Connection interrupted",
+      "failed": "Connection failed",
+      "closed": "Closed",
+      "offline": "Offline",
+      "new": "New"
+    },
+    "settings": {
+      "autoOpen": {
+        "name": "Automatically open listener",
+        "hint": "Open the small listener window when a GM starts broadcasting."
+      },
+      "notifications": {
+        "name": "Broadcast notifications",
+        "hint": "Show SoundPad broadcast start and end notifications."
+      },
+      "bitrate": {
+        "name": "Maximum audio quality",
+        "hint": "WebRTC audio bitrate in bits per second. 96,000 provides a good balance of quality and bandwidth."
+      }
+    },
+    "notifications": {
+      "broadcastStarted": "SoundPad broadcast started. Players can now enable listening.",
+      "broadcastStopped": "SoundPad broadcast stopped.",
+      "streamAvailable": "{gm} is offering a Tabletop Audio broadcast.",
+      "streamEnded": "The Tabletop Audio broadcast has ended."
+    },
+    "errors": {
+      "gmOnly": "Only a GM can start broadcasting.",
+      "captureUnsupported": "This browser cannot capture tab audio. Use Chrome or Edge.",
+      "captureCancelled": "Tab sharing was cancelled.",
+      "captureFailed": "Unable to start audio capture.",
+      "noAudioTrack": "No audio was shared. Select the Tabletop Audio tab and enable audio sharing.",
+      "audioContext": "The browser did not allow audio playback. Click Enable listening again."
+    }
+  }
+}

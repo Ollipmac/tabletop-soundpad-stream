@@ -1,0 +1,78 @@
+{
+  "tabletop-soundpad-stream": {
+    "controls": {
+      "open": "Ouvrir Tabletop Audio SoundPad Stream"
+    },
+    "hub": {
+      "title": "Tabletop Audio — Diffusion SoundPad",
+      "heading": "SoundPad Stream",
+      "subtitle": "Diffuse directement le son d’un onglet Tabletop Audio à tes joueurs.",
+      "unofficial": "Module communautaire non officiel. Aucun son de Tabletop Audio n’est inclus, copié ou stocké.",
+      "choosePad": "Choisir un SoundPad",
+      "choosePadHint": "Le SoundPad s’ouvrira sur le site officiel de Tabletop Audio.",
+      "openPad": "Ouvrir",
+      "capture": "Capturer et diffuser le son",
+      "captureHint": "La diffusion est directe entre ton navigateur et ceux des joueurs.",
+      "captureInstruction": "Dans la fenêtre de partage, choisis l’onglet Tabletop Audio et active « Partager également l’audio de l’onglet ».",
+      "start": "Démarrer la diffusion",
+      "stop": "Arrêter la diffusion",
+      "players": "joueurs connectés",
+      "noPlayers": "Aucun joueur dans ce monde.",
+      "noStorage": "Aucun stockage audio sur le serveur"
+    },
+    "receiver": {
+      "title": "Écoute SoundPad",
+      "heading": "Tabletop Audio",
+      "waitingForGM": "En attente de la diffusion du MJ.",
+      "liveFrom": "Diffusion proposée par {gm}.",
+      "theGM": "le MJ",
+      "enable": "Activer l’écoute",
+      "disable": "Couper l’écoute",
+      "volume": "Volume Tabletop Audio",
+      "clickRequired": "Un clic est obligatoire pour autoriser le son dans le navigateur."
+    },
+    "status": {
+      "idle": "Diffusion arrêtée",
+      "requesting": "Choisis l’onglet à partager…",
+      "broadcasting": "Diffusion en direct",
+      "stopping": "Arrêt en cours…",
+      "disabled": "Écoute désactivée",
+      "waiting": "En attente",
+      "connecting": "Connexion…",
+      "connected": "Connecté",
+      "disconnected": "Connexion interrompue",
+      "failed": "Échec de connexion",
+      "closed": "Fermé",
+      "offline": "Hors ligne",
+      "new": "Nouveau"
+    },
+    "settings": {
+      "autoOpen": {
+        "name": "Ouvrir automatiquement le récepteur",
+        "hint": "Ouvre la petite fenêtre d’écoute lorsqu’un MJ démarre une diffusion."
+      },
+      "notifications": {
+        "name": "Notifications de diffusion",
+        "hint": "Affiche les notifications de début et de fin de diffusion SoundPad."
+      },
+      "bitrate": {
+        "name": "Qualité audio maximale",
+        "hint": "Débit audio WebRTC en bits par seconde. 96 000 offre un bon équilibre entre qualité et bande passante."
+      }
+    },
+    "notifications": {
+      "broadcastStarted": "Diffusion SoundPad démarrée. Les joueurs peuvent maintenant activer l’écoute.",
+      "broadcastStopped": "Diffusion SoundPad arrêtée.",
+      "streamAvailable": "{gm} propose une diffusion Tabletop Audio.",
+      "streamEnded": "La diffusion Tabletop Audio est terminée."
+    },
+    "errors": {
+      "gmOnly": "Seul un MJ peut démarrer la diffusion.",
+      "captureUnsupported": "Ce navigateur ne permet pas la capture audio d’un onglet. Utilise Chrome ou Edge.",
+      "captureCancelled": "Le partage de l’onglet a été annulé.",
+      "captureFailed": "Impossible de démarrer la capture audio.",
+      "noAudioTrack": "Aucun son n’a été partagé. Sélectionne l’onglet Tabletop Audio et coche le partage de l’audio.",
+      "audioContext": "Le navigateur n’a pas autorisé la lecture audio. Clique de nouveau sur Activer l’écoute."
+    }
+  }
+}

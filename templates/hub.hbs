@@ -1,0 +1,86 @@
+<div class="tts-shell">
+  <header class="tts-hero">
+    <div class="tts-hero-icon"><i class="fa-solid fa-wave-square"></i></div>
+    <div>
+      <h2>{{localize "tabletop-soundpad-stream.hub.heading"}}</h2>
+      <p>{{localize "tabletop-soundpad-stream.hub.subtitle"}}</p>
+    </div>
+  </header>
+
+  <div class="tts-notice">
+    <i class="fa-solid fa-circle-info"></i>
+    <span>{{localize "tabletop-soundpad-stream.hub.unofficial"}}</span>
+  </div>
+
+  <section class="tts-card">
+    <div class="tts-section-title">
+      <span class="tts-step">1</span>
+      <div>
+        <h3>{{localize "tabletop-soundpad-stream.hub.choosePad"}}</h3>
+        <p>{{localize "tabletop-soundpad-stream.hub.choosePadHint"}}</p>
+      </div>
+    </div>
+    <div class="tts-row">
+      <select data-role="pad-select" aria-label="{{localize 'tabletop-soundpad-stream.hub.choosePad'}}">
+        {{#each pads}}
+          <option value="{{path}}" {{#if selected}}selected{{/if}}>{{label}}</option>
+        {{/each}}
+      </select>
+      <button type="button" class="tts-button secondary" data-action="open-pad">
+        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        {{localize "tabletop-soundpad-stream.hub.openPad"}}
+      </button>
+    </div>
+  </section>
+
+  <section class="tts-card">
+    <div class="tts-section-title">
+      <span class="tts-step">2</span>
+      <div>
+        <h3>{{localize "tabletop-soundpad-stream.hub.capture"}}</h3>
+        <p>{{localize "tabletop-soundpad-stream.hub.captureHint"}}</p>
+      </div>
+    </div>
+    <div class="tts-capture-instructions">
+      <i class="fa-brands fa-chrome"></i>
+      <span>{{localize "tabletop-soundpad-stream.hub.captureInstruction"}}</span>
+    </div>
+    {{#if active}}
+      <button type="button" class="tts-button danger wide" data-action="stop-stream">
+        <i class="fa-solid fa-stop"></i>
+        {{localize "tabletop-soundpad-stream.hub.stop"}}
+      </button>
+    {{else}}
+      <button type="button" class="tts-button primary wide" data-action="start-stream" {{#unless supportsCapture}}disabled{{/unless}}>
+        <i class="fa-solid fa-tower-broadcast"></i>
+        {{localize "tabletop-soundpad-stream.hub.start"}}
+      </button>
+    {{/if}}
+  </section>
+
+  <section class="tts-card tts-status-card {{#if active}}is-live{{/if}}">
+    <div class="tts-status-line">
+      <div>
+        <span class="tts-live-dot"></span>
+        <strong>{{captureStateLabel}}</strong>
+      </div>
+      <span>{{connectedCount}} / {{activePlayerCount}} {{localize "tabletop-soundpad-stream.hub.players"}}</span>
+    </div>
+    <div class="tts-player-list">
+      {{#each users}}
+        <div class="tts-player {{status}}">
+          <i class="fa-solid {{#if active}}fa-headphones{{else}}fa-circle-xmark{{/if}}"></i>
+          <span>{{name}}</span>
+          <small>{{statusLabel}}</small>
+        </div>
+      {{else}}
+        <p class="tts-empty">{{localize "tabletop-soundpad-stream.hub.noPlayers"}}</p>
+      {{/each}}
+    </div>
+  </section>
+
+  <footer class="tts-footer">
+    <span><i class="fa-solid fa-server"></i> {{localize "tabletop-soundpad-stream.hub.noStorage"}}</span>
+    <span>v{{version}}</span>
+  </footer>
+</div>

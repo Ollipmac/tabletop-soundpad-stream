@@ -1,0 +1,33 @@
+<div class="tts-shell receiver-shell">
+  <header class="tts-hero compact">
+    <div class="tts-hero-icon"><i class="fa-solid fa-headphones"></i></div>
+    <div>
+      <h2>{{localize "tabletop-soundpad-stream.receiver.heading"}}</h2>
+      <p>{{#if remoteActive}}{{localize "tabletop-soundpad-stream.receiver.liveFrom" gm=gmName}}{{else}}{{localize "tabletop-soundpad-stream.receiver.waitingForGM"}}{{/if}}</p>
+    </div>
+  </header>
+
+  <div class="tts-receiver-status {{connectionState}}">
+    <span class="tts-live-dot"></span>
+    <strong>{{connectionStateLabel}}</strong>
+  </div>
+
+  {{#if listening}}
+    <div class="tts-volume-control">
+      <i class="fa-solid fa-volume-low"></i>
+      <input data-role="receiver-volume" type="range" min="0" max="1" step="0.01" value="{{volume}}" aria-label="{{localize 'tabletop-soundpad-stream.receiver.volume'}}">
+      <i class="fa-solid fa-volume-high"></i>
+      <span data-role="volume-value">{{volumePercent}}%</span>
+    </div>
+    <button type="button" class="tts-button secondary wide" data-action="disable-listening">
+      <i class="fa-solid fa-volume-xmark"></i>
+      {{localize "tabletop-soundpad-stream.receiver.disable"}}
+    </button>
+  {{else}}
+    <button type="button" class="tts-button primary wide receiver-enable" data-action="enable-listening">
+      <i class="fa-solid fa-play"></i>
+      {{localize "tabletop-soundpad-stream.receiver.enable"}}
+    </button>
+    <p class="tts-browser-note"><i class="fa-solid fa-circle-info"></i> {{localize "tabletop-soundpad-stream.receiver.clickRequired"}}</p>
+  {{/if}}
+</div>
